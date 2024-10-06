@@ -6,14 +6,14 @@ export default class Cl_mCliente {
     }
 
 set cedula(c){
-    this._cedula = c;
+    this._cedula = +c;
 }    
 get cedula(){
     return this._cedula;
 }
 
 set tipo(t){
-    this._tipo = t;
+    this._tipo = +t;
 }
 get tipo(){
     return this._tipo;

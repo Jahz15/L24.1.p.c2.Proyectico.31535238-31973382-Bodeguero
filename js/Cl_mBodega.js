@@ -1,8 +1,32 @@
 export default class Cl_mBodega{
-    constructor(){
-        this.acum10 = 5;
-        this.acum20 = 2;
-        this.acum50 = 10;
+    constructor({ini10, ini20, ini50}){
+        this.ini10 = ini10;
+        this.ini20 = ini20;
+        this.ini50 = ini50;
+        this.acum10 = 0;
+        this.acum20 = 0;
+        this.acum50 = 0;
+    }
+
+    set ini10(i1){
+        this._ini10 = +i1;
+    }
+    get ini10(){
+        return this._ini10;
+    }
+
+    set ini20(i2){
+        this._ini20 = +i2;
+    }
+    get ini20(){
+        return this._ini20;
+    }
+
+    set ini50(i3){
+        this._ini50 = +i3;
+    }
+    get ini50(){
+        return this._ini50;
     }
     procesarCliente(cliente){
         if(cliente.tipo == 10){
@@ -12,14 +36,13 @@ export default class Cl_mBodega{
         }else if(cliente.tipo == 50){
             this.acum50 += cliente.cantidad;
         }
-
     }
     montoFinal10(){
-        return (this.acum10 * 10).toFixed(2);}
+        return ((this.ini10*10) + (this.acum10 * 10)).toFixed(2);}
     montoFinal20(){
-        return (this.acum20 * 20).toFixed(2);}
+        return ((this.ini20*20) + (this.acum20 * 20)).toFixed(2);}
     montoFinal50(){
-        return (this.acum50 * 50).toFixed(2);}
+        return ((this.ini50*50) + (this.acum50 * 50)).toFixed(2);}
     montoFinalTotal(){
       return (Number(this.montoFinal10()) + Number(this.montoFinal20()) + Number(this.montoFinal50())).toFixed(2);}
 }

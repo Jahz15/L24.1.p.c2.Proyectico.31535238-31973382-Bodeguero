@@ -1,19 +1,37 @@
 export default class Cl_vBodega {
     constructor(controlador) {
         this.vista = document.getElementById("bodegaForm");
+        this.vistaInicial = document.getElementById("bodegaForm_inicial");
+        this.inInicial10 = document.getElementById("bodegaForm_inInicial10");
+        this.inInicial20 = document.getElementById("bodegaForm_inInicial20");
+        this.inInicial50 = document.getElementById("bodegaForm_inInicial50");
         this.tabla = document.getElementById("bodegaForm_tabla");
         this.lblMontoFinal10 = document.getElementById("bodegaForm_lblMontoFinal10");
         this.lblMontoFinal20 = document.getElementById("bodegaForm_lblMontoFinal20");
         this.lblMontoFinal50 = document.getElementById("bodegaForm_lblMontoFinal50");
         this.lblMontoFinalTotal = document.getElementById("bodegaForm_lblMontoFinalTotal");
+        this.btAceptar = document.getElementById("bodegaForm_btAceptar");
+        this.btAceptar.onclick = () => controlador.billetesInicial({
+                ini10: this.inInicial10.value,
+                ini20: this.inInicial20.value,
+                ini50: this.inInicial50.value,
+            });
+            this.ocultar();
         this.btAgregar = document.getElementById("bodegaForm_btAgregar");
         this.btAgregar.onclick = () => controlador.mostrarVistaCliente();
     }
+
     mostrar() {
         this.vista.hidden = false;
     }
     ocultar() {
         this.vista.hidden = true;
+    }
+    mostrarInicial(){
+        this.vistaInicial.hidden = false;
+    }
+    ocultarInicial(){
+        this.vistaInicial.hidden = true;
     }
     reportarCliente({
         cedula,

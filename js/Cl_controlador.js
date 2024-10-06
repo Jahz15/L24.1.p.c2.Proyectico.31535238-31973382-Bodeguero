@@ -12,16 +12,31 @@ export default class Cl_controlador {
     constructor() {
         this.vCliente = new Cl_vCliente(this);
         this.vBodega = new Cl_vBodega(this);
-        this.mBodega = new Cl_mBodega();
+        this.mBodega = new Cl_mBodega(this);
     }
     mostrarVistaCliente() {
         this.vBodega.ocultar();
         this.vCliente.mostrar();
+        this.vBodega.ocultarInicial();
     }
     mostrarVistaBodega() {
         this.vCliente.ocultar();
+        this.vBodega.ocultarInicial();
         this.vBodega.mostrar();
     }
+    mostrarVistaInicial() {
+        this.vBodega.ocultar();
+        this.vCliente.ocultar();
+        this.vBodega.mostrarInicial();
+    }
+    billetesInicial({ini10, ini20, ini50}) {
+        this.mBodega.ini10 = ini10;
+        this.mBodega.ini20 = ini20;
+        this.mBodega.ini50 = ini50;
+        this.mostrarVistaBodega();
+        
+        
+        }
     agregarCliente({cedula, tipo, cantidad}) {
         let cliente = new Cl_mCliente({cedula, tipo, cantidad});
         this.mBodega.procesarCliente(cliente);
