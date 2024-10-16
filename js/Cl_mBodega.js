@@ -1,32 +1,32 @@
 export default class Cl_mBodega{
-    constructor({ini10, ini20, ini50}){
-        this.ini10 = ini10;
-        this.ini20 = ini20;
-        this.ini50 = ini50;
+    constructor({cntBilletes10, cntBilletes20, cntBilletes50}){
+        this.cntBilletes10 = cntBilletes10;
+        this.cntBilletes20 = cntBilletes20;
+        this.cntBilletes50 = cntBilletes50;
         this.acum10 = 0;
         this.acum20 = 0;
         this.acum50 = 0;
     }
 
-    set ini10(i1){
-        this._ini10 = +i1;
+    set cntBilletes10(b10){
+        this._cntBilletes10 = +b10;
     }
-    get ini10(){
-        return this._ini10;
-    }
-
-    set ini20(i2){
-        this._ini20 = +i2;
-    }
-    get ini20(){
-        return this._ini20;
+    get cntBilletes10(){
+        return this._cntBilletes10;
     }
 
-    set ini50(i3){
-        this._ini50 = +i3;
+    set cntBilletes20(b20){
+        this._cntBilletes20 = +b20;
     }
-    get ini50(){
-        return this._ini50;
+    get cntBilletes20(){
+        return this._cntBilletes20;
+    }
+
+    set cntBilletes50(b50){
+        this._cntBilletes50 = +b50;
+    }
+    get cntBilletes50(){
+        return this._cntBilletes50;
     }
     procesarCliente(cliente){
         if(cliente.tipo == 10){
@@ -38,11 +38,11 @@ export default class Cl_mBodega{
         }
     }
     montoFinal10(){
-        return ((this.ini10*10) + (this.acum10 * 10)).toFixed(2);}
+        return ((this.cntBilletes10*10) + (this.acum10 * 10)).toFixed(2);}
     montoFinal20(){
-        return ((this.ini20*20) + (this.acum20 * 20)).toFixed(2);}
+        return ((this.cntBilletes20*20) + (this.acum20 * 20)).toFixed(2);}
     montoFinal50(){
-        return ((this.ini50*50) + (this.acum50 * 50)).toFixed(2);}
+        return ((this.cntBilletes50*50) + (this.acum50 * 50)).toFixed(2);}
     montoFinalTotal(){
       return (Number(this.montoFinal10()) + Number(this.montoFinal20()) + Number(this.montoFinal50())).toFixed(2);}
 }

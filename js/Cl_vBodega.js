@@ -12,9 +12,9 @@ export default class Cl_vBodega {
         this.lblMontoFinalTotal = document.getElementById("bodegaForm_lblMontoFinalTotal");
         this.btAceptar = document.getElementById("bodegaForm_btAceptar");
         this.btAceptar.onclick = () => controlador.billetesInicial({
-                ini10: this.inInicial10.value,
-                ini20: this.inInicial20.value,
-                ini50: this.inInicial50.value,
+                cntBilletes10: this.inInicial10.value,
+                cntBilletes20: this.inInicial20.value,
+                cntBilletes50: this.inInicial50.value,
             });
             this.ocultar();
         this.btAgregar = document.getElementById("bodegaForm_btAgregar");

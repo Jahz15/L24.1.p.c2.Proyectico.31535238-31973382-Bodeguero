@@ -29,10 +29,10 @@ export default class Cl_controlador {
         this.vCliente.ocultar();
         this.vBodega.mostrarInicial();
     }
-    billetesInicial({ini10, ini20, ini50}) {
-        this.mBodega.ini10 = ini10;
-        this.mBodega.ini20 = ini20;
-        this.mBodega.ini50 = ini50;
+    billetesInicial({cntBilletes10, cntBilletes20, cntBilletes50}) {
+        this.mBodega.cntBilletes10 = cntBilletes10;
+        this.mBodega.cntBilletes20 = cntBilletes20;
+        this.mBodega.cntBilletes50 = cntBilletes50;
         this.mostrarVistaBodega();
         
         
