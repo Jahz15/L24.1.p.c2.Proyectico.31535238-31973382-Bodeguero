@@ -35,7 +35,7 @@ export default class Cl_controlador {
         this.mBodega.cntBilletes50 = cntBilletes50;
         this.mostrarVistaBodega();
         
-        
+
         }
     agregarCliente({cedula, tipo, cantidad}) {
         let cliente = new Cl_mCliente({cedula, tipo, cantidad});

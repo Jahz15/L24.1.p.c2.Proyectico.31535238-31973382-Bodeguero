@@ -38,11 +38,11 @@ export default class Cl_mBodega{
         }
     }
     montoFinal10(){
-        return ((this.cntBilletes10*10) + (this.acum10 * 10)).toFixed(2);}
+        return ((this.cntBilletes10 + this.acum10) * 10).toFixed(2);}
     montoFinal20(){
-        return ((this.cntBilletes20*20) + (this.acum20 * 20)).toFixed(2);}
+        return ((this.cntBilletes20 + this.acum20) * 20).toFixed(2);}
     montoFinal50(){
-        return ((this.cntBilletes50*50) + (this.acum50 * 50)).toFixed(2);}
+        return ((this.cntBilletes50 + this.acum50) * 50).toFixed(2);}
     montoFinalTotal(){
       return (Number(this.montoFinal10()) + Number(this.montoFinal20()) + Number(this.montoFinal50())).toFixed(2);}
 }
